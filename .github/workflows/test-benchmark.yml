@@ -1,16 +1,7 @@
 name: Test & Benchmark
 
 on:
-  pull_request:
-    branches: [main]
-    paths:
-      - 'java/**'
-      - 'python/**'
-      - 'node/**'
-      - 'scripts/**'
-      - '.github/workflows/**'
   workflow_dispatch:
-
 concurrency:
   group: ci-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
